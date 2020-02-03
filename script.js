@@ -4,7 +4,7 @@
 //    function randLower() {
 //     Math.floor(Math.random());
 //   },
-  
+
 //   uppercase:["A","B","C","D","E","F","G","h","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","w","X","Y","Z"],
 //   nums:[1,2,3,4,5,6,7,8,9,0],
 //   symbol: ["!","@","#","$","%","^","&","*","(",")","[","]","|"],
@@ -28,14 +28,14 @@ function writePassword() {
   console.log(newpass)
   if (newpass === true) {
     var length = prompt("Pick a password length between 8 and 128 characters.")
-      if (length < 7) {
-        alert("please, pick a password length between 8 and 128 characters. ")
-        var length = prompt("Pick a password length between 8 and 128 characters.")
-      }
-      if (length > 129) {
-        alert("please, pick a password length between 8 and 128 characters. ")
-        var length = prompt("Pick a password length between 8 and 128 characters.")
-      }
+    if (length < 7) {
+      alert("please, pick a password length between 8 and 128 characters. ")
+      var length = prompt("Pick a password length between 8 and 128 characters.")
+    }
+    if (length > 129) {
+      alert("please, pick a password length between 8 and 128 characters. ")
+      var length = prompt("Pick a password length between 8 and 128 characters.")
+    }
     console.log(length)
     var lowercase = confirm("Do you want lowercase letters?")
     console.log(lowercase)
@@ -49,29 +49,69 @@ function writePassword() {
     alert("no password for you!")
   }
 
-  for (var i=0; i < parseInt(length); i++) {
-    var randomNumber = Math.floor(Math.random() * 3);
-    console.log(randomNumber)
-    if (randomNumber === 0)
-    var randLower = choices.lowercase
+
+
+  if (lowercase === true && uppercase === true) {
+
+    for (var i = 0; i < parseInt(length); i++) {
+      var randomNumber = Math.floor(Math.random() * 1);
+      console.log(randomNumber)
+      if (randomNumber === 0) {
+        function makeidlower(length) {
+          var result = '';
+          var characters = 'abcdefghijklmnopqrstuvwxyz0123456789';
+          var charactersLength = characters.length;
+          for (var i = 0; i < length; i++) {
+            result += characters.charAt(Math.floor(Math.random() * charactersLength));
+          }
+          return result;
+        }
+        console.log(makeidlower(length));
+      }
+      else {
+        function makeidupper(length) {
+          var result = '';
+          var characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+          var charactersLength = characters.length;
+          for (var i = 0; i < length; i++) {
+            result += characters.charAt(Math.floor(Math.random() * charactersLength));
+          }
+          return result;
+        }
+        console.log(makeidupper(length));
+
+      }
+    }
+
+
 
 
 
   }
-  
 
 
 
 
 
 
+
+
+
+}
+
+
+
+
+
+
+g
 
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
 
   passwordText.value = password;
 
-}
+
 
 
 
