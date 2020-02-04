@@ -43,6 +43,7 @@ function writePassword() {
     if (lower || upper || nums || symb) generatePassword(length, lower, upper, nums, symb);
     else {
       questions(length)
+      alert("please select atleast one option.")
     }
 
 
